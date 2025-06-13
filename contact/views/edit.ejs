@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <%- include('header.ejs'); -%>
+<head>
+    <title>Edit Contact</title>
+    <style>
+        .out{
+            float: left;
+            height: auto;
+            width: 100%;
+        }
+         .box{
+            height: 370px;
+            width: 450px;
+            float: left;
+            background-color: rgba(3, 3, 3, 0.1);
+            margin-left: 400px;
+            margin-top: 50px;
+         }
+         input{
+            padding: 5px 9px 5px 9px ;
+         }
+         button {
+         background-color: #0a0a0a; 
+         color: white; 
+         border: none; 
+         padding: 10px 20px; 
+         font-size: 16px; 
+         border-radius: 5px; 
+         cursor: pointer; 
+         transition: background-color 0.3s ease;
+       }
+
+        button:hover {
+          background-color: #e4e9ef; 
+          color:black
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <h1>Edit Contact</h1>
+    <div class="out">
+    <div class="box">
+    <form method="post" action="/update/<%= contact._id %>">
+        <h4>Name:</h4>
+        <input type="text" name="name" value="<%= contact.name %>" required/>
+
+        <h4>Description:</h4>
+        <input type="text" name="description" value="<%= contact.description %>" required/>
+
+        <h4>Phone Number:</h4>
+        <input type="text" name="contact" value="<%= contact.contact %>" required/>
+
+        <br><br>
+        <button type="submit">Update Contact</button>
+    </form>
+    </div>
+    </div>
+</body>
+<%- include('footer.ejs'); -%>
+</html>

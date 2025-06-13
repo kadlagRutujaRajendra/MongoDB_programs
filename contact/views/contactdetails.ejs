@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <%- include('header.ejs'); -%>
+<head>
+    <title>Contact List</title>
+    <style>
+        .box{
+            float: left;
+            height: auto;
+            width: 70%;
+            margin-left: 15%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: rgb(16, 16, 17,0.1);
+           
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #333;
+            color: white;
+        }
+        a {
+            padding: 5px 10px;
+            text-decoration: none;
+            color: white;
+            border-radius: 3px;
+        }
+        .edit { background-color: rgb(16, 16, 17); }
+        .delete { background-color: red; }
+    </style>
+</head>
+<body>
+    <div class="box">
+    <h1>Contact List</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Phone No</th>
+            <th>Actions</th>
+        </tr>
+        <% contacts.forEach(contact => { %>
+            <tr>
+                <td><%= contact.name %></td>
+                <td><%= contact.description %></td>
+                <td><%= contact.contact %></td>
+                <td>
+                    <a href="/edit/<%= contact._id %>" class="edit">Edit</a>
+                    <a href="/delete/<%= contact._id %>" class="delete" onclick="return confirm('Are you sure?');">Delete</a>
+                </td>
+            </tr>
+        <% }); %>
+    </table>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<%- include('header.ejs'); -%>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Mini Project</title>
+    <style>
+        body {
+        
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            height: 350px;
+            width: 100%;
+            margin-top: 50px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #060606;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .btn:hover{
+            background-color: #e4e9ef; 
+            color:black
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Our Contact Mini Project</h1>
+        <p>Click below to get in touch with us!</p>
+        <a href="/contact" class="btn">Go to Contact Page</a>
+    </div>
+</body>
+<%- include('footer.ejs'); -%>
+</html>
+
